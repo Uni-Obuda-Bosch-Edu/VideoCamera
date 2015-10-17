@@ -7,6 +7,6 @@ public interface ICamera {
 	
 	IVectorDefinition getMovementVector();
 	IVectorDefinition getPositionUnitVector();	
-	List<IObject> getVisibleObject();
+	List<IObject> getVisibleObjects();
 	
 }
