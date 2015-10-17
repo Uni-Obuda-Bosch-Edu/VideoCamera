@@ -6,10 +6,8 @@ import Common.IVectorDefinition;
 
 public interface ICameraGet {
 
-	IVectorDefinition getMovementVector();
-
 	IVectorDefinition getPositionUnitVector();
-
-	List<IObject> getVisibleObjects();
+	
+	List<IVisibleObject> getVisibleObjects();
 
 }
