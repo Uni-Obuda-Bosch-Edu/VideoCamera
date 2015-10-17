@@ -3,6 +3,7 @@
 	<name>VideoCamera</name>
 	<comment></comment>
 	<projects>
+		<project>FrameWork</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
