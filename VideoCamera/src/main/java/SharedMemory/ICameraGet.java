@@ -1,12 +1,15 @@
 package SharedMemory;
+
 import java.util.*;
 
 import Common.IVectorDefinition;
 
-public interface ICamera {
-	
+public interface ICameraGet {
+
 	IVectorDefinition getMovementVector();
-	IVectorDefinition getPositionUnitVector();	
+
+	IVectorDefinition getPositionUnitVector();
+
 	List<IObject> getVisibleObjects();
-	
+
 }

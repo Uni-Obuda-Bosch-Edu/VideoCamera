@@ -1,9 +1,11 @@
 package SharedMemory;
 
 import Common.I2DPoint;
-import Common.IVectorDefinition;
+import Common.IRotationMatrix;
 
 public interface IObject {
-	IVectorDefinition getUnitVectorOfAngle();
-	I2DPoint getPosition(); //???
+	
+	IRotationMatrix getRotation();
+
+	I2DPoint getPosition();
 }
