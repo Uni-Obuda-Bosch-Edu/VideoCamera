@@ -26,7 +26,10 @@ public class VideoCamera {
 	private boolean isObjectFacesRightDirection(IVisibleObject obj, IVectorDefinition vect)
 	{
 		double alpha = calcDegree(vect);
-		double gamma = calcDegree(obj.getRotation());
+		double gamma = obj.getRotationAngle();
+		
+		//System.out.println( "alpha: "+alpha +" gamma: "+gamma + " "+ (Math.abs(gamma-alpha) < 90));
+		
 		
 		return Math.abs(gamma-alpha) < 90;
 	}
@@ -50,7 +53,7 @@ public class VideoCamera {
 		}
 	}
 	
-	private void Iteration() {
+	public void Iteration() {
 
 		IVectorDefinition vectorPos = cameraGet.getPositionUnitVector();
 		List<IVisibleObject> visibleObjects = cameraGet.getVisibleObjects();
@@ -68,11 +71,9 @@ public class VideoCamera {
 		
 		calcualtedObjects.sort(new Comparator());
 		
-		List<ICalculatedObject> returnObjects = new ArrayList<ICalculatedObject>();
-		
-		if(returnObjects.size() >= 1)
+		if(calcualtedObjects.size() >= 1)
 		{
-			cameraSet.setClosestObject(returnObjects.get(0));
+			cameraSet.setClosestObject(calcualtedObjects.get(0));
 		}
 		else
 		{
@@ -82,12 +83,9 @@ public class VideoCamera {
 
 	private double calcDegree(IVectorDefinition vect)
 	{
-		return Math.atan(vect.getPointEnd().getY()/vect.getPointEnd().getX());
+		return Math.toDegrees(Math.atan(vect.getPointEnd().getY()/vect.getPointEnd().getX()));
 	}
 	
-	private double calcDegree(IRotationMatrix matrix )
-	{
-		return Math.atan(matrix.getMatrixMember(2, 1)/matrix.getMatrixMember(2, 2));
-	}
+	
 
 }

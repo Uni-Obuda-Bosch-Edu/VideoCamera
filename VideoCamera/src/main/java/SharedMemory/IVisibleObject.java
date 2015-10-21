@@ -8,4 +8,5 @@ public interface IVisibleObject {
 	IRotationMatrix getRotation();
 	I2DPoint getPosition();
 	boolean isRoadSign();
+	double getRotationAngle();
 }

@@ -5,8 +5,19 @@ import SharedMemory.IVisibleObject;
 
 public class CalculatedObjectImpl implements ICalculatedObject {
 
+	@Override
+	public double getRotationAngle() {
+		return AngleCalculator.getRotationAngle(object.getRotation());
+	}
+	
 	IVectorDefinition posvect;
 	IVisibleObject object;
+	
+	@Override
+	public String toString() {
+		
+		return "RoadSign: "+isRoadSign() +" "+ object.getPosition().toString() +" Angle:" + object.getRotationAngle();
+	}
 	
 	public CalculatedObjectImpl(IVectorDefinition posvect, IVisibleObject object)
 	{
