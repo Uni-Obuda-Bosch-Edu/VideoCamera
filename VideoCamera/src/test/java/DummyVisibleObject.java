@@ -11,7 +11,7 @@ public class DummyVisibleObject implements IVisibleObject {
 	
 	@Override
 	public String toString() {
-		return "RoadSign: "+isRoadSign() +" "+ getPosition().toString() +" Angle:" + getRotationAngle() + " GivenAngle: "+givenAngle;
+		return "RoadSign: "+isRoadSign() +" "+ getPosition().toString() + " rotationcheck: "+(Math.abs(givenAngle-getRotationAngle()) < 1) ;
 	}
 	
 	private IRotationMatrix rotationMatrix;
